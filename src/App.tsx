@@ -38,19 +38,17 @@ function App() {
     : expenses;
 
   return (
-    <>
-      <div className="container col-8  mt-4">
-        <h3 className="text-center">Expense Tracker</h3>
-        <Form />
-        <ExpenseFilter
-          onSelectCategory={(category: string) => setSelectedCategory(category)}
-        />
-        <ExpenseList
-          expenses={visbleExpenses}
-          onDelete={(id) => setExpenses(expenses.filter((e) => e.id != id))}
-        />
-      </div>
-    </>
+    <div className="container col-8  mt-4">
+      <h3 className="text-center">Expense Tracker</h3>
+      <Form />
+      <ExpenseFilter
+        onSelectCategory={(category: string) => setSelectedCategory(category)}
+      />
+      <ExpenseList
+        expenses={visbleExpenses}
+        onDelete={(id) => setExpenses(expenses.filter((e) => e.id != id))}
+      />
+    </div>
   );
 }
 
