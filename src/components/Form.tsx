@@ -1,3 +1,4 @@
+import { categories } from "../App";
 const Form = () => {
   return (
     <form action="" className="col-6 mb-4">
@@ -18,7 +19,9 @@ const Form = () => {
           Select Category
         </label>
         <select name="category" id="category" className="form-select">
-          <option value="">Utilities</option>
+          {categories.map((category) => {
+            return <option value={category}>{category}</option>;
+          })}
         </select>
       </div>
       <button className="btn btn-primary">Add Expense</button>

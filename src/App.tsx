@@ -4,6 +4,8 @@ import { useState } from "react";
 import Form from "./components/Form";
 import ExpenseFilter from "./components/ExpenseFilter";
 
+export const categories = ["Groceries", "Utilities", "Entertainment"];
+
 function App() {
   const [expenses, setExpenses] = useState([
     {
