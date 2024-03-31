@@ -41,7 +41,11 @@ function App() {
   return (
     <div className="container col-8  mt-4">
       <h3 className="text-center">Expense Tracker</h3>
-      <Form />
+      <Form
+        onSubmit={(expense) =>
+          setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])
+        }
+      />
       <ExpenseFilter
         onSelectCategory={(category: string) => setSelectedCategory(category)}
       />
