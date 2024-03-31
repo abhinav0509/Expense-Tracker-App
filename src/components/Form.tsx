@@ -4,8 +4,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 const schema = z.object({
-  description: z.string().min(3).max(50),
-  amount: z.number().min(0.01).max(100_000),
+  description: z
+    .string()
+    .min(3, { message: "Description should be atleast 3 characters." })
+    .max(50),
+  amount: z
+    .number({ invalid_type_error: "Amount is required." })
+    .min(0.01)
+    .max(100_000),
   category: z.enum(categories),
 });
 
@@ -43,7 +49,7 @@ const Form = () => {
           Amount
         </label>
         <input
-          {...register("amount")}
+          {...register("amount", { valueAsNumber: true })}
           id="amount"
           type="text"
           className="form-control"
