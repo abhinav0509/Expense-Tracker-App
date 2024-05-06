@@ -3,7 +3,6 @@ import ExpenseList from "./components/ExpenseList";
 import { useState } from "react";
 import Form from "./components/Form";
 import ExpenseFilter from "./components/ExpenseFilter";
-import categories from "./categories";
 
 function App() {
   const [expenses, setExpenses] = useState([

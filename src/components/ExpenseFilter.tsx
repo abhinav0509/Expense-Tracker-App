@@ -1,9 +1,9 @@
 import categories from "../categories";
+interface Props {
+  onSelectCategory: (category: string) => void;
+}
 
 const ExpenseFilter = ({ onSelectCategory }: Props) => {
-  interface Props {
-    onSelectCategory: (category: string) => void;
-  }
   return (
     <div className="col-3 mb-3">
       <select
